@@ -5649,8 +5649,10 @@ let
   });
 
   valgrind = callPackage ../development/tools/analysis/valgrind { };
+  
+  cube = callPackage ../development/libraries/cube { qt= qt4; };  
 
-  scorep = callPackage ../development/libraries/scorep { };
+  scorep = callPackage ../development/libraries/scorep {  };
 
   valkyrie = callPackage ../development/tools/analysis/valkyrie { };
 
@@ -14784,6 +14786,9 @@ let
   httrack = callPackage ../tools/backup/httrack { };
 
   mg = callPackage ../applications/editors/mg { };
+
+  # Proprietary software  section
+  scalasca = callPackage ../proprietary/tools/scalasca { };
 
 
   # Attributes for backward compatibility.
