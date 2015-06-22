@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
   
   patchPhase= ''
 	ln -s ${bbp-cmake}/share/bbp-cmake/Common CMake/common &&
-	sed -i 's@include(CommonCPack)@@g' CMakeLists.txt
+	sed -i 's@include(CommonCPack)@include(PackageConfig)@g' CMakeLists.txt
 	'';  
   
 }
