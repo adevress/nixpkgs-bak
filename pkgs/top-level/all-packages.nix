@@ -14809,10 +14809,12 @@ let
   touchdetector = callPackage ../bbp/hpc/touchdetector {  };   
 
   flatindexer = callPackage ../bbp/hpc/FLATIndexer { hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; 
-													 python = python27;
-													 numpy = pkgs.pythonPackages.numpy; };
-													 
-  mod2c = 	callPackage ../bbp/hpc/mod2c { };												 
+                                                        python = python27;
+                                                        numpy = pkgs.pythonPackages.numpy; };
+
+  mod2c =   callPackage ../bbp/hpc/mod2c { };
+  
+  coreneuron = callPackage ../bbp/hpc/coreneuron { };
 
   # Proprietary software  section
   scalasca = callPackage ../proprietary/tools/scalasca { };
