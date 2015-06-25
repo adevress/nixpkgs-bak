@@ -14815,6 +14815,9 @@ let
   mod2c =   callPackage ../bbp/hpc/mod2c { };
   
   coreneuron = callPackage ../bbp/hpc/coreneuron { };
+  
+  # BBP software Tests  section
+  bbptestdata = callPackage ../bbp/tests/BBPTestData { };
 
   # Proprietary software  section
   scalasca = callPackage ../proprietary/tools/scalasca { };
