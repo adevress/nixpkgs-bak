@@ -17,6 +17,7 @@ stdenv.mkDerivation rec {
     '';  
   
   postInstall = ''
+    mkdir -p $out/share/bbptestdata/ &&
     cp -r ../circuitBuilding_1000neurons $out/share/bbptestdata/ && 
     cp -r ../ballAndStick $out/share/bbptestdata/ && 
     cp -r ../NESTSpikeData $out/share/bbptestdata/ && 
