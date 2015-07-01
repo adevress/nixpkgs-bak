@@ -9846,6 +9846,8 @@ let
   gogoclient = callPackage ../os-specific/linux/gogoclient { };
 
   nss_ldap = callPackage ../os-specific/linux/nss_ldap { };
+  
+  libnss-native-wrapper = callPackage ../os-specific/linux/libnss-native-wrapper { };
 
   pam = callPackage ../os-specific/linux/pam { };
 
