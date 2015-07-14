@@ -1,8 +1,8 @@
-{ stdenv, fetchgitPrivate, pkgconfig, boost, hpctools, libxml2, cmake, bbp-cmake, mpich2, zlib, python, hdf5, doxygen }:
+{ stdenv, fetchgitPrivate, pkgconfig, boost, hpctools, libxml2, cmake, bbp-cmake, mpiRuntime, zlib, python, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
   name = "functionalizer-3.5.0.0.DEV";
-  buildInputs = [ stdenv pkgconfig boost hpctools zlib cmake mpich2 libxml2 python hdf5 doxygen];
+  buildInputs = [ stdenv pkgconfig boost hpctools zlib cmake mpiRuntime libxml2 python hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/building/Functionalizer";

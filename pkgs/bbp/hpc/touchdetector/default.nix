@@ -1,8 +1,8 @@
-{ stdenv, fetchgitPrivate, pkgconfig, boost, hpctools, libxml2, cmake, bbp-cmake, mpich2, python, zlib, hdf5, doxygen }:
+{ stdenv, fetchgitPrivate, pkgconfig, boost, hpctools, libxml2, cmake, bbp-cmake, mpiRuntime, python, zlib, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
   name = "touchdetector-4.0.0.0.TRUNK";
-  buildInputs = [ stdenv pkgconfig boost hpctools zlib cmake mpich2 libxml2 python hdf5 doxygen];
+  buildInputs = [ stdenv pkgconfig boost hpctools zlib cmake mpiRuntime libxml2 python hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/building/TouchDetector";

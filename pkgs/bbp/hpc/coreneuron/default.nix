@@ -1,8 +1,8 @@
-{ stdenv, fetchgitPrivate, perl, cmake, bbp-cmake, pkgconfig, mpich2, mod2c}:
+{ stdenv, fetchgitPrivate, perl, cmake, bbp-cmake, pkgconfig, mpiRuntime, mod2c}:
 
 stdenv.mkDerivation rec {
   name = "coreneuron-0.6.0-DEV";
-  buildInputs = [ stdenv perl cmake pkgconfig mpich2 mod2c];
+  buildInputs = [ stdenv perl cmake pkgconfig mpiRuntime mod2c];
 
 
   src = fetchgitPrivate {

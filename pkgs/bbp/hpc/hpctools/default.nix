@@ -1,8 +1,8 @@
-{ stdenv, fetchgitPrivate, boost, libxml2, cmake, bbp-cmake, mpich2, pkgconfig, python, hdf5, doxygen }:
+{ stdenv, fetchgitPrivate, boost, libxml2, cmake, bbp-cmake, mpiRuntime, pkgconfig, python, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
   name = "hpctools-3.2.0-DEV";
-  buildInputs = [ stdenv pkgconfig boost cmake mpich2 libxml2 python hdf5 doxygen];
+  buildInputs = [ stdenv pkgconfig boost cmake mpiRuntime libxml2 python hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/hpc/HPCTools";

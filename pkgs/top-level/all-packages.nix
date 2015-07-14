@@ -7436,6 +7436,8 @@ let
 
   mpich2 = callPackage ../development/libraries/mpich2 { };
 
+  mvapich2 = callPackage ../development/libraries/mvapich2 { };
+
   mstpd = callPackage ../os-specific/linux/mstpd { };
 
   mtdev = callPackage ../development/libraries/mtdev { };
@@ -14802,21 +14804,37 @@ let
   bbp-cmake = callPackage ../bbp/config/bbp-cmake { };     
 
   # BBP software section
-  hpctools = callPackage ../bbp/hpc/hpctools { python = python27; };
+  hpctools = callPackage ../bbp/hpc/hpctools { 
+                python = python27; 
+                mpiRuntime = mvapich2;
+  }; 
   
-  bbpsdk = callPackage ../bbp/hpc/bbpsdk { hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; }; 
+  bbpsdk = callPackage ../bbp/hpc/bbpsdk { 
+                hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;};
+                mpiRuntime = mvapich2;
+  }; 
   
-  functionalizer = callPackage ../bbp/hpc/functionalizer { python = python27; };  
+  functionalizer = callPackage ../bbp/hpc/functionalizer { 
+                 python = python27; 
+                 mpiRuntime = mvapich2;
+  };  
   
-  touchdetector = callPackage ../bbp/hpc/touchdetector {  };   
+  touchdetector = callPackage ../bbp/hpc/touchdetector {  
+                 mpiRuntime = mvapich2;  
+  };   
 
-  flatindexer = callPackage ../bbp/hpc/FLATIndexer { hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; 
-                                                        python = python27;
-                                                        numpy = pkgs.pythonPackages.numpy; };
+  flatindexer = callPackage ../bbp/hpc/FLATIndexer { 
+                hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; 
+                python = python27;
+                numpy = pkgs.pythonPackages.numpy; 
+                mpiRuntime = mvapich2;  
+  };
 
   mod2c =   callPackage ../bbp/hpc/mod2c { };
   
-  coreneuron = callPackage ../bbp/hpc/coreneuron { };
+  coreneuron = callPackage ../bbp/hpc/coreneuron {
+                   mpiRuntime = mvapich2;
+  };
   
   # BBP software Tests  section
   bbptestdata = callPackage ../bbp/tests/BBPTestData { };

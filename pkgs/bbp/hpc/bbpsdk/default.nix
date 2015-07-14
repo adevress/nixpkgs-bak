@@ -1,8 +1,8 @@
-{ stdenv, fetchgitPrivate, boost, lunchbox, brion, vmmlib, servus, cmake, bbp-cmake, mpich2, pkgconfig, python, hdf5, doxygen }:
+{ stdenv, fetchgitPrivate, boost, lunchbox, brion, vmmlib, servus, cmake, bbp-cmake, mpiRuntime, pkgconfig, python, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
   name = "bbpsdk-0.22.0.0DEV";
-  buildInputs = [ stdenv pkgconfig boost brion vmmlib servus cmake bbp-cmake mpich2 lunchbox python hdf5 doxygen];
+  buildInputs = [ stdenv pkgconfig boost brion vmmlib servus cmake bbp-cmake mpiRuntime lunchbox python hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/common/BBPSDK";
