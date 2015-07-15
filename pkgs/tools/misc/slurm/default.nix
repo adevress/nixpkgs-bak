@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, perl, python, openssl, pkgconfig }:
+{ stdenv, fetchFromGitHub, perl, python, pkgconfig, openssl, munge ? null }:
 
 stdenv.mkDerivation rec {
   name = "slurm-14.03.4-2";
@@ -12,7 +12,9 @@ stdenv.mkDerivation rec {
 
   buildInputs =[perl python pkgconfig openssl];
   
-  configureFlags =  "--sysconfdir=/etc/slurm --with-ssl=${openssl}";
+  configureFlags =  "--sysconfdir=/etc/slurm --with-ssl=${openssl}
+                    ${if munge != null then "--with-munge=${munge}" else "" }
+                    ";
 
   meta = with stdenv.lib; {
     description = "Slurm: A Highly Scalable Workload Manager";
