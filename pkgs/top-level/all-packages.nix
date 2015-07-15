@@ -7437,6 +7437,8 @@ let
   mpich2 = callPackage ../development/libraries/mpich2 { };
 
   mvapich2 = callPackage ../development/libraries/mvapich2 { };
+  
+  slurm = callPackage ../tools/misc/slurm { };  
 
   mstpd = callPackage ../os-specific/linux/mstpd { };
 
