@@ -1,14 +1,14 @@
 {stdenv, fetchFromGitHub}:
 
 stdenv.mkDerivation rec {
-  name = "bbp-cmake-2015.1.0.0DEV";
+  name = "bbp-cmake-2015R2";
   
   
   src = fetchFromGitHub {
   owner = "Eyescale";
   repo = "CMake";
-    rev = "0bd6baa5ef821409564ec2d16e268d68c6ef44a0";
-    sha256 = "18vicw6f6ygzbixii26svv9jc286xmjhn78v10zl6zrcr49vxf06";
+    rev = "5397ec8f6f64480b8885cf563960d9b4b4db86f3";
+    sha256 = "1r5nm92r8ign8mh7knark065lgp4dx5d4z0z1ax8q5gjgcyxa6i0";
   };
 
   
