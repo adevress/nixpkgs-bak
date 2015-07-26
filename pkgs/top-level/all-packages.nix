@@ -14806,36 +14806,39 @@ let
   bbp-cmake = callPackage ../bbp/config/bbp-cmake { };     
 
   # BBP software section
+  bbp-mpi = if (stdenv.isLinux) then mvapich2
+            else mpich2;
+  
   hpctools = callPackage ../bbp/hpc/hpctools { 
                 python = python27; 
-                mpiRuntime = mvapich2;
+                mpiRuntime = bbp-mpi;
   }; 
   
   bbpsdk = callPackage ../bbp/hpc/bbpsdk { 
                 hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;};
-                mpiRuntime = mvapich2;
+                mpiRuntime = bbp-mpi;
   }; 
   
   functionalizer = callPackage ../bbp/hpc/functionalizer { 
                  python = python27; 
-                 mpiRuntime = mvapich2;
+                 mpiRuntime = bbp-mpi;
   };  
   
   touchdetector = callPackage ../bbp/hpc/touchdetector {  
-                 mpiRuntime = mvapich2;  
+                 mpiRuntime = bbp-mpi;  
   };   
 
   flatindexer = callPackage ../bbp/hpc/FLATIndexer { 
                 hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; 
                 python = python27;
                 numpy = pkgs.pythonPackages.numpy; 
-                mpiRuntime = mvapich2;  
+                mpiRuntime = bbp-mpi;  
   };
 
   mod2c =   callPackage ../bbp/hpc/mod2c { };
   
   coreneuron = callPackage ../bbp/hpc/coreneuron {
-                   mpiRuntime = mvapich2;
+                   mpiRuntime = bbp-mpi;
   };
   
   # BBP software Tests  section
