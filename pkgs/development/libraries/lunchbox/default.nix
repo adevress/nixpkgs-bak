@@ -1,14 +1,14 @@
 { stdenv, boost, fetchgit, cmake, bbp-cmake, mpich2, servus, pkgconfig, leveldb, doxygen }:
 
 stdenv.mkDerivation rec {
-  name = "lunchbox-1.12.0.0DEV";
+  name = "lunchbox-1.11.1-stable";
   buildInputs = [ stdenv boost pkgconfig bbp-cmake servus mpich2 cmake leveldb doxygen];
 
   src = fetchgit {
     url = "https://github.com/Eyescale/Lunchbox.git";
     
-    rev = "99a20c215491be4839acd40b31565c0f02c93334";
-    sha256 = "1x0cpl6igljsvrg0ii61qm3qcdvnmbx9565dx8h182v9g8ymphh4";
+    rev = "cf29f6132771889f1c5f53335f599fe329911832";
+    sha256 = "1d41ry3ims9h1cxjc1wg0i8x9g8wvwpqxl4zrm4dcxl43rrcl04g";
   };
   
   patchPhase= ''
