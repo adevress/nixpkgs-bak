@@ -1,7 +1,7 @@
 {stdenv, fetchFromGitHub}:
 
 stdenv.mkDerivation rec {
-  name = "bbp-cmake-2015R2";
+  name = "bbp-hpc-cmake-2015R2";
   
   
   src = fetchFromGitHub {
