@@ -14803,7 +14803,11 @@ let
 
   vmmlib = callPackage ../development/libraries/vmmlib { python = python27; };
   
-  bbp-cmake = callPackage ../bbp/config/bbp-cmake { };     
+  # cmake configuration from viz team
+  bbp-cmake = callPackage ../bbp/config/bbp-cmake { };   
+  
+  # cmake configuration from HPC team
+  bbp-hpc-cmake = callPackage ../bbp/config/bbp-cmake/hpc-201506.nix { };      
 
   # BBP software section
   bbp-mpi = if (stdenv.isLinux) then mvapich2
@@ -14812,6 +14816,7 @@ let
   hpctools = callPackage ../bbp/hpc/hpctools { 
                 python = python27; 
                 mpiRuntime = bbp-mpi;
+                bbp-cmake = bbp-hpc-cmake;
   }; 
   
   bbpsdk = callPackage ../bbp/hpc/bbpsdk { 
@@ -14822,10 +14827,12 @@ let
   functionalizer = callPackage ../bbp/hpc/functionalizer { 
                  python = python27; 
                  mpiRuntime = bbp-mpi;
+                 bbp-cmake = bbp-hpc-cmake;                 
   };  
   
   touchdetector = callPackage ../bbp/hpc/touchdetector {  
                  mpiRuntime = bbp-mpi;  
+                 bbp-cmake = bbp-hpc-cmake;                 
   };   
 
   flatindexer = callPackage ../bbp/hpc/FLATIndexer { 
@@ -14833,12 +14840,16 @@ let
                 python = python27;
                 numpy = pkgs.pythonPackages.numpy; 
                 mpiRuntime = bbp-mpi;  
+                bbp-cmake = bbp-hpc-cmake;
   };
 
-  mod2c =   callPackage ../bbp/hpc/mod2c { };
+  mod2c =   callPackage ../bbp/hpc/mod2c { 
+                bbp-cmake = bbp-hpc-cmake;  
+  };
   
   coreneuron = callPackage ../bbp/hpc/coreneuron {
-                   mpiRuntime = bbp-mpi;
+                bbp-cmake = bbp-hpc-cmake;
+                mpiRuntime = bbp-mpi;
   };
   
   # BBP software Tests  section

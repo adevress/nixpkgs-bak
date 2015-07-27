@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
   owner = "Eyescale";
   repo = "CMake";
-    rev = "d65d84e2d8ba0210ae0697d43a05b08fbac66058";
-    sha256 = "0b0v7ikir8x9h431613c24h8mm2q9kyiqjn6lzaxshnxn064ss09";
+    rev = "5397ec8f6f64480b8885cf563960d9b4b4db86f3";
+    sha256 = "1r5nm92r8ign8mh7knark065lgp4dx5d4z0z1ax8q5gjgcyxa6i0";
   };
 
   
