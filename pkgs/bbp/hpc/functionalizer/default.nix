@@ -1,13 +1,13 @@
 { stdenv, fetchgitPrivate, pkgconfig, boost, hpctools, libxml2, cmake, bbp-cmake, mpiRuntime, zlib, python, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
-  name = "functionalizer-3.5.0.0.DEV";
+  name = "functionalizer-3.6.0-stable";
   buildInputs = [ stdenv pkgconfig boost hpctools zlib cmake mpiRuntime libxml2 python hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/building/Functionalizer";
-    rev = "1b12785c2b402870f5e497d7b7ee148d1ae0fdcc";
-    sha256 = "042p54xjm8fgrzac1dimcz6fcw3x27svdvrw86cjb1qfzmhdyk2q";
+    rev = "c3b07faeda873320384482f2d40c177149be714c";
+    sha256 = "0phh2819yp7qvfaqwpxkdyf6d034mpnajkjs6bsww4gm5rlifr9w";
   };
   
   cmakeFlags="-DBoost_USE_STATIC_LIBS=FALSE";  
