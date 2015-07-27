@@ -6,8 +6,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = "https://github.com/Eyescale/vmmlib.git";
-    rev= "eb372a2f7717c0d481dc2bf5389d77763ab8d759";
-    sha256 = "1y92bsh7jny35g7w7mpj0vaarr94h9rv7j5mdvcjn29l4a4khvwh";
+    rev= "1fe52736d15c6f3a3f0b012e36765da0eef85932";
+    sha256 = "0gbyzqkv1yq6njpkq57yi038si079c7xwl7ndpwqyflwhfmzb0hs";
   };
   
   
