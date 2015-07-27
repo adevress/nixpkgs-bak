@@ -43,10 +43,28 @@ EOF
 
   preConfigure = ''sh build.sh'';
   
+  preInstall = ''
+mkdir -p $out/lib/pkgconfig;
+cat > $out/lib/pkgconfig/Bluron.pc << EOF
+prefix=$out  
+exec_prefix= \''${prefix}
+libdir= \''${prefix}/lib
+includedir=\''${prefix}/include
+
+Name: Bluron.pc                           
+Description: Bluron pkgconfig file 
+Version: 2.2.1
+Libs: -L\''${libdir}
+Cflags: -I\''${includedir}/ 
+EOF
+'';
+
+  
   configureFlags = ''
                 --with-paranrn --without-iv
                 --with-nrnpython have_cython=no 
                 '';
+  
   
   enableParallelBuilding = true;
 }

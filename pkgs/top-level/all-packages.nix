@@ -14812,6 +14812,8 @@ let
   # BBP software section
   bbp-mpi = if (stdenv.isLinux) then mvapich2
             else mpich2;
+            
+  bbp-hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;};
   
   hpctools = callPackage ../bbp/hpc/hpctools { 
                 python = python27; 
@@ -14820,7 +14822,7 @@ let
   }; 
   
   bbpsdk = callPackage ../bbp/hpc/bbpsdk { 
-                hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;};
+                hdf5 = bbp-hdf5;
                 mpiRuntime = bbp-mpi;
   }; 
   
@@ -14836,7 +14838,7 @@ let
   };   
 
   flatindexer = callPackage ../bbp/hpc/FLATIndexer { 
-                hdf5 = pkgs.hdf5.override{ cxx= true; enableShared = true;}; 
+                hdf5 = bbp-hdf5; 
                 python = python27;
                 numpy = pkgs.pythonPackages.numpy; 
                 mpiRuntime = bbp-mpi;  
@@ -14853,8 +14855,19 @@ let
   };
   
   bluron = callPackage ../bbp/hpc/bluron {
-				mpiRuntime = bbp-mpi;
+                mpiRuntime = bbp-mpi;
   };
+  
+  reportinglib = callPackage ../bbp/hpc/reportinglib {
+                mpiRuntime = bbp-mpi;
+  };  
+    
+
+  neurodamus = callPackage ../bbp/hpc/neurodamus {
+                mpiRuntime = bbp-mpi;
+                hdf5 = bbp-hdf5;
+  };  
+  
   
   # BBP software Tests  section
   bbptestdata = callPackage ../bbp/tests/BBPTestData { };
