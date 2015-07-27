@@ -1,13 +1,13 @@
 { stdenv, fetchgit, cmake, bbp-cmake, doxygen, python, blas  }:
 
 stdenv.mkDerivation rec {
-  name = "vmmlib-1.8.0";
+  name = "vmmlib-1.8.0-stable";
   buildInputs = [ stdenv cmake bbp-cmake doxygen python blas];
 
   src = fetchgit {
     url = "https://github.com/Eyescale/vmmlib.git";
-    rev= "67e94ce8c7344b5e42d9ee5f965e9c734c8d8bf8";
-    sha256 = "0hj5j5njmwajna7r5qq9dzjncfb2scdx3p22jcsxqa8514c5ivlx";
+    rev= "eb372a2f7717c0d481dc2bf5389d77763ab8d759";
+    sha256 = "1y92bsh7jny35g7w7mpj0vaarr94h9rv7j5mdvcjn29l4a4khvwh";
   };
   
   
