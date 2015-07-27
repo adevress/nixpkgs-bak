@@ -1,14 +1,14 @@
 { stdenv, fetchgit, cmake, bbp-cmake, boost, pkgconfig, doxygen }:
 
 stdenv.mkDerivation rec {
-  name = "servus-1.1.1.0DEV";
+  name = "servus-1.1.0-stable";
   buildInputs = [ stdenv pkgconfig boost cmake bbp-cmake doxygen];
 
   src = fetchgit {
     url = "https://github.com/HBPVIS/Servus.git";
     
-    rev = "74b2cbc07cf488cc20ddcee597084ff8446a6c26";
-    sha256 = "0wb7jx394wiadzvm1rdr1bbv699g2n06fcvh0g39fi2mxlrkwzlc";
+    rev = "0a5c5e4aeb6479e4ed6346b0aa9197a14d38afa4";
+    sha256 = "05xdcqac2p7wp8p4xgs4h2i5415pvzg98fjsgpgxrxg1l1fjzhlj";
   };
   
   patchPhase= ''
