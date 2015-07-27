@@ -14852,6 +14852,10 @@ let
                 mpiRuntime = bbp-mpi;
   };
   
+  bluron = callPackage ../bbp/hpc/bluron {
+				mpiRuntime = bbp-mpi;
+  };
+  
   # BBP software Tests  section
   bbptestdata = callPackage ../bbp/tests/BBPTestData { };
 
