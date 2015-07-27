@@ -17,13 +17,13 @@ hdf5,
 doxygen }:
 
 stdenv.mkDerivation rec {
-  name = "flatindexer-1.7.0-0.TRUNK";
+  name = "flatindexer-1.8.0-stable";
   buildInputs = [ stdenv pkgconfig boost cmake bbp-cmake bbpsdk brion lunchbox vmmlib servus zlib python numpy hdf5 doxygen];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/building/FLATIndex";
-    rev = "44fc6a986d4f73dbb2411ee319ab53c1bb8b321b";
-    sha256 = "1yimz0dby2ycmfy93f8j2prb1i82pqrnp7figxs5gcp0qv7gghsc";
+    rev = "3cdc827d13494648c186df167ba12d74ef1541ca";
+    sha256 = "0m4l13gsd34rfcl0k12baf3wywgcwb6r82k26k8n4jzyb3qfs7qh";
   };
   
   
