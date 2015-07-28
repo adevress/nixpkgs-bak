@@ -14836,6 +14836,12 @@ let
                  mpiRuntime = bbp-mpi;  
                  bbp-cmake = bbp-hpc-cmake;                 
   };   
+  
+  bluebuilder = callPackage ../bbp/hpc/bluebuilder {  
+                 hdf5 = bbp-hdf5;  
+                 mpiRuntime = bbp-mpi;  
+                 bbp-cmake = bbp-hpc-cmake;                 
+  };     
 
   flatindexer = callPackage ../bbp/hpc/FLATIndexer { 
                 hdf5 = bbp-hdf5; 
