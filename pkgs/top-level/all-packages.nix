@@ -14828,8 +14828,7 @@ let
   
   functionalizer = callPackage ../bbp/hpc/functionalizer { 
                  python = python27; 
-                 mpiRuntime = bbp-mpi;
-                 bbp-cmake = bbp-hpc-cmake;                 
+                 mpiRuntime = bbp-mpi;                
   };  
   
   touchdetector = callPackage ../bbp/hpc/touchdetector {  
