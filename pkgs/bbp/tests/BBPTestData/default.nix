@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/common/TestData";
-    rev = "39b75bf8895819cb1bff0a58935efc7862cbd7f7";
-    sha256 = "1vwra9a4ahwcqc6blh9zspn0vc5j5bz9micsq269ays57f9b9fvf";
+    rev = "b81b4f83bbaa8cc91e620d9a35d3c5ff8bf9017f";
+    sha256 = "1n6ylg2dcsadkgmr02xdn6mcrfmwbpanags2pqwj7hlj5afgjgmg";
   };
   
   patchPhase = ''
