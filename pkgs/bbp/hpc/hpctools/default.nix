@@ -1,4 +1,4 @@
-{ stdenv, fetchgitPrivate, boost, libxml2, cmake, bbp-cmake, mpiRuntime, pkgconfig, python, hdf5, doxygen }:
+{ stdenv, fetchgitPrivate, boost, libxml2, cmake, mpiRuntime, pkgconfig, python, hdf5, doxygen }:
 
 stdenv.mkDerivation rec {
   name = "hpctools-3.3.0-DEV";
@@ -6,13 +6,10 @@ stdenv.mkDerivation rec {
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/hpc/HPCTools";
-    rev = "b04ba8004e734a94ff9a73fd479e95f7876e336a";
-    sha256 = "1sy9m1fjmf25wsxxp89dpi2cxp6zpps3sq09fx2hi4ili3yv0w2i";    
+    rev = "82b0f680365f4e7871275b4d84efe610b7521567";
+    sha256 = "0pk52d4jrbdxclzyjhmqkx9zr296h5fa7daz6d1rcjgw9dxlg3kb";    
   };
-  
-	patchPhase= ''
-	ln -s ${bbp-cmake}/share/bbp-cmake/Common CMake/common
-	'';     
+      
   
   enableParallelBuilding = true;  
 }
