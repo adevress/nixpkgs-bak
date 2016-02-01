@@ -10,9 +10,11 @@ stdenv.mkDerivation rec {
     sha256 = "14ffyqxb9q1hy532ibssw2sxmkqc57j8v71l62bf85gd50yiz48f";
   };
   
-  cmakeFlags="-DBoost_USE_STATIC_LIBS=FALSE";   
+  cmakeFlags="-DBoost_USE_STATIC_LIBS=FALSE -DUNIT_TESTS=TRUE";   
 
   enableParallelBuilding = true;
+ 
+  
 }
 
 
