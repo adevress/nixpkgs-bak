@@ -12,13 +12,13 @@ mpiRuntime,
 }:
 
 stdenv.mkDerivation rec {
-  name = "bluebuilder-1.2.1-stable";
+  name = "bluebuilder-1.2.1-DEV";
   buildInputs = [ stdenv pkgconfig boost hpctools hdf5 zlib cmake mpiRuntime libxml2];
 
   src = fetchgitPrivate {
     url = "ssh://bbpcode.epfl.ch/building/BlueBuilder";
-    rev = "7df9cc97e1f4d9734a902b8389c8016fbd320253";
-    sha256 = "19bfriagiwzrqh6q0mrf4vjx2k6qdj7ai7vi3nkw0irpngcmlwwr";
+    rev = "731bf5694aba9cb433273beb9009c5fbe50ee3fa";
+    sha256 = "0j8qb017p61gm0l4d7y4jjmm69m3q5acyym7z2m75ws1szg1yiq6";
   };
   
   cmakeFlags="-DBoost_USE_STATIC_LIBS=FALSE";  
