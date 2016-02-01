@@ -14818,7 +14818,6 @@ let
   hpctools = callPackage ../bbp/hpc/hpctools { 
                 python = python27; 
                 mpiRuntime = bbp-mpi;
-                bbp-cmake = bbp-hpc-cmake;
   }; 
   
   bbpsdk = callPackage ../bbp/hpc/bbpsdk { 
@@ -14833,7 +14832,6 @@ let
   
   touchdetector = callPackage ../bbp/hpc/touchdetector {  
                  mpiRuntime = bbp-mpi;  
-                 bbp-cmake = bbp-hpc-cmake;                 
   };   
   
   bluebuilder = callPackage ../bbp/hpc/bluebuilder {  
@@ -14871,6 +14869,7 @@ let
   neurodamus = callPackage ../bbp/hpc/neurodamus {
                 mpiRuntime = bbp-mpi;
                 hdf5 = bbp-hdf5;
+		bbp-cmake = bbp-hpc-cmake;
   };  
   
   
